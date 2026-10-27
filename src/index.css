@@ -1,0 +1,134 @@
+/* Names for the colours. Change a name here and every use of it changes. */
+:root {
+  --bg: #070b14;
+  --fg: #eef2f9;
+  --muted: #8b97ad;
+  --accent: #3dbe8a;
+}
+
+/* The page behind the score. */
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: Georgia, serif;
+}
+
+/* Two columns on a wide window. One column when the window is narrow. */
+.page {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: minmax(280px, 420px) minmax(320px, 560px);
+  gap: 48px;
+  align-items: start;
+  justify-content: center;
+  padding: 48px 24px;
+  text-align: left;
+}
+
+@media (max-width: 800px) {
+  .page {
+    grid-template-columns: 1fr;
+  }
+}
+
+.label {
+  margin: 0;
+  color: var(--muted);
+  font-family: system-ui, sans-serif;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+/* The number itself. */
+.score {
+  margin: 8px 0 0;
+  font-size: 6rem;
+  line-height: 1;
+  color: var(--accent);
+}
+
+.controls {
+  margin-top: 32px;
+  display: grid;
+  gap: 12px;
+  font-family: system-ui, sans-serif;
+  color: var(--muted);
+  text-align: left;
+}
+
+.controls input {
+  display: block;
+  margin-top: 4px;
+  width: 6rem;
+  font: inherit;
+  color: var(--fg);
+  background: transparent;
+  border: 1px solid var(--muted);
+  border-radius: 6px;
+  padding: 4px 8px;
+}
+
+.lever {
+  margin: 16px 0 0;
+  font-family: system-ui, sans-serif;
+  font-size: 1rem;
+  color: var(--fg);
+}
+
+.add {
+  margin-top: 20px;
+  font: inherit;
+  color: var(--bg);
+  background: var(--accent);
+  border: 0;
+  border-radius: 6px;
+  padding: 8px 14px;
+}
+
+.saved {
+  margin-top: 20px;
+  display: grid;
+  gap: 8px;
+}
+
+.saved-role {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.saved-role button {
+  font: inherit;
+  color: var(--fg);
+  background: transparent;
+  border: 1px solid var(--muted);
+  border-radius: 6px;
+  padding: 4px 8px;
+}
+
+.controls input[type='text'] {
+  width: 14rem;
+}
+
+.controls textarea {
+  display: block;
+  margin-top: 4px;
+  width: 18rem;
+  min-height: 5rem;
+  font: inherit;
+  color: var(--fg);
+  background: transparent;
+  border: 1px solid var(--muted);
+  border-radius: 6px;
+  padding: 8px;
+}
+
+.controls input[type='text'],
+.controls textarea,
+.controls input[type='number'] {
+  width: 100%;
+  box-sizing: border-box;
+}
